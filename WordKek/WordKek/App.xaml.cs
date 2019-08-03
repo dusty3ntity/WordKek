@@ -1,4 +1,5 @@
 ﻿using System;
+using WordKek.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
