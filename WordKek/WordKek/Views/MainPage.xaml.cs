@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using WordKek.ViewModels;
 using Xamarin.Forms;
-
 namespace WordKek.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -17,6 +16,7 @@ namespace WordKek.Views
         public MainPage()
         {
             InitializeComponent();
+            MyImage1.Source = ImageSource.FromFile("ImagePlusButton.png");
             BindingContext = new MainPageViewModel();
         }
     }

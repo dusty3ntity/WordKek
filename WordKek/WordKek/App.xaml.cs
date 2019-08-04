@@ -10,8 +10,24 @@ namespace WordKek
         public App()
         {
             InitializeComponent();
+            var tabbed = new CarouselPage();
+            tabbed.Children.Add(new MainPage());
+            tabbed.Children.Add(new MainPage());
+            tabbed.Title = "WordKek";
+            
+            
+            var masterdetailpage = new MasterDetailPage
+            {
 
-            MainPage = new MainPage();
+                Master= new MainPage(),
+                Detail = new NavigationPage(tabbed)
+                {
+                    BarBackgroundColor = Color.FromHex("#303030"),
+                    BarTextColor = Color.FromHex("#B5B5B5"),
+                }
+
+            };
+            MainPage =  masterdetailpage;
         }
 
         protected override void OnStart()
