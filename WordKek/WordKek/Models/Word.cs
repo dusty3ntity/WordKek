@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WordKek.Models
 {
-
-    class WordEntry
+    [Serializable]
+    class Word
     {
-        public string Word { get; private set; }
+        public string OriginalWord { get; private set; }
         public string Translation { get; private set; }
         public bool IsLearned { get; private set; }
         public ushort CorrectRepeatsCount { get; private set; }
+        public ushort TotalRepeatsCount { get; private set; }
+
         /// <summary>
         /// Parameterized constructor 
         /// </summary>
-        /// <param name="word"> Foreign word</param>
-        /// <param name="translation"> Origin word</param>
-        public WordEntry(string word, string translation)
+        /// <param name="word"> Foreign word </param>
+        /// <param name="translation"> Translation </param>
+        public Word(string originalWord, string translation)
         {
-            Word = word;
+            OriginalWord = originalWord;
             Translation = translation;
             IsLearned = false;
             CorrectRepeatsCount = 0;
@@ -26,18 +26,22 @@ namespace WordKek.Models
 
         public void IncreaseCorrectRepeatsCount(ushort maxRepeats)
         {
-            if (CorrectRepeatsCount < maxRepeats)
-                CorrectRepeatsCount++;
-            else
+            CorrectRepeatsCount++;
+            if (CorrectRepeatsCount == maxRepeats)
                 IsLearned = true;
         }
+
         private void ResetCorrectRepeatsCount()
         {
             CorrectRepeatsCount = 0;
         }
-        public bool Equals(WordEntry word)
+
+        public override bool Equals(object ob)
         {
-            return Word == word.Word && Translation == word.Translation;
+            Word w = ob as Word;
+            if (w == null)
+                return false;
+            return OriginalWord == w.OriginalWord && Translation == w.Translation;
         }
     }
 }
