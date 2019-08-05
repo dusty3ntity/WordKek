@@ -3,7 +3,7 @@
 namespace WordKek.Models
 {
     [Serializable]
-    class Word
+    public class Word
     {
         public string OriginalWord { get; private set; }
         public string Translation { get; private set; }
