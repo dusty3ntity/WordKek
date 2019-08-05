@@ -1,26 +1,27 @@
-﻿using System;
-using System.Collections;
-using System.Text;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace WordKek.Models
 {
-    class LearningWordList
+    class LearningWordList : IEnumerable
     {
-        public ArrayList WordList { get; private set; }
+        private List<Word> wordList;
+        public uint NewWordsNumber { get; set; }
+        public uint WordsToPracticeNumber { get; set; }
 
-        public ushort CurrentWordNumber { get; private set; }
-
-        public LearningWordList(ArrayList list)
+        public LearningWordList()
         {
-            WordList = list;
-            CurrentWordNumber = 0;
+            wordList = new List<Word>();
         }
 
-        public Word GetNextWord()
+        public void Add(Word word)
         {
-            if (CurrentWordNumber == WordList.Count)
-                return null;
-            return (Word) WordList[CurrentWordNumber++];
+            wordList.Add(word);
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return (IEnumerator)this;
         }
     }
 }

@@ -10,6 +10,7 @@ namespace WordKek.Models
         public bool IsLearned { get; private set; }
         public ushort CorrectRepeatsCount { get; private set; }
         public ushort TotalRepeatsCount { get; private set; }
+        public bool GoesForNextDay { get; private set; }
 
         /// <summary>
         /// Parameterized constructor 
@@ -22,18 +23,24 @@ namespace WordKek.Models
             Translation = translation;
             IsLearned = false;
             CorrectRepeatsCount = 0;
+            TotalRepeatsCount = 0;
+            GoesForNextDay = false;
         }
 
         public void IncreaseCorrectRepeatsCount(ushort maxRepeats)
         {
+            TotalRepeatsCount++;
             CorrectRepeatsCount++;
+            GoesForNextDay = false;
             if (CorrectRepeatsCount == maxRepeats)
                 IsLearned = true;
         }
 
         private void ResetCorrectRepeatsCount()
         {
+            TotalRepeatsCount++;
             CorrectRepeatsCount = 0;
+            GoesForNextDay = true;
         }
 
         public override bool Equals(object ob)
