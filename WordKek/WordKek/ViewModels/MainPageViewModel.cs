@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using WordKek.Models;
 using WordKek.Utils;
+using WordKek.Views;
 using Xamarin.Forms;
 
 namespace WordKek.ViewModels
@@ -11,5 +12,6 @@ namespace WordKek.ViewModels
         {
             mainWordList = FileHandler.OpenMainWordList();
         }
+
     }
 }

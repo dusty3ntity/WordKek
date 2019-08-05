@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 
-namespace WordKek.Models
+namespace WordKek.Models 
 {
     [Serializable]
-    public class MainWordList
+    public class MainWordList : IEnumerable
     {
         private List<Word> wordList;
 
@@ -34,6 +35,11 @@ namespace WordKek.Models
         public void Remove(Word word)
         {
             wordList.Remove(word);
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return wordList.GetEnumerator();
         }
     }
 }

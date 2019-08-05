@@ -14,14 +14,14 @@ namespace WordKek
             InitializeComponent();
             var tabbed = new CarouselPage();
             tabbed.Children.Add(new MainPage());
-            tabbed.Children.Add(new MainPage());
+            tabbed.Children.Add(new DicitonaryListPage());
             tabbed.Title = "WordKek";
             
             
             var masterdetailpage = new MasterDetailPage
             {
 
-                Master= new MainPage(),
+                Master= new MasterPage(),
                 Detail = new NavigationPage(tabbed)
                 {
                     BarBackgroundColor = Color.FromHex("#303030"),

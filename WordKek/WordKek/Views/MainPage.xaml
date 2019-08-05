@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Text="Add new word!" TextColor="#f9f9f9" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <ImageButton Grid.Row="1" x:Name="AddNewWord" BorderColor="Transparent" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,0,0,15"/>
+        <ImageButton Grid.Row="1" x:Name="AddNewWord" BorderColor="Transparent" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,0,0,15" Clicked="AddNewWord_Clicked"/>
         <BoxView Grid.Row="2" BackgroundColor="#212121"/>
         <Grid Grid.Row="2" Padding="10" >
             <Grid.RowDefinitions >
@@ -35,7 +35,7 @@
 
             </Grid>
 
-            <Button Grid.Row="2" Text="Continue learning" VerticalOptions="CenterAndExpand" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" />
+            <Button Grid.Row="2" Text="Continue learning" VerticalOptions="CenterAndExpand" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" Clicked="Button_Clicked" />
         </Grid>
     </Grid>
 
