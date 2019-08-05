@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Text="Add new word!" TextColor="#f9f9f9" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <ImageButton Grid.Row="1" x:Name="MyImage1" BorderColor="Transparent" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,0,0,15"/>
+        <ImageButton Grid.Row="1" x:Name="AddNewWord" BorderColor="Transparent" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,0,0,15"/>
         <BoxView Grid.Row="2" BackgroundColor="#212121"/>
         <Grid Grid.Row="2" Padding="10" >
             <Grid.RowDefinitions >

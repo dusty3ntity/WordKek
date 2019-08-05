@@ -16,7 +16,7 @@ namespace WordKek.Views
         public MainPage()
         {
             InitializeComponent();
-            MyImage1.Source = ImageSource.FromFile("ImagePlusButton.png");
+            AddNewWord.Source = ImageSource.FromFile("ImagePlusButton.png");
             BindingContext = new MainPageViewModel();
         }
     }

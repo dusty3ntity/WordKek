@@ -9,13 +9,18 @@ namespace WordKek.Utils
         {
             MainWordList list;
             if (FileHandlerService.FileExists("dictionary.dat"))
-                list = FileHandlerService.ReadDictionary();
+                list = FileHandlerService.OpenMainWordList();
             else
             {
                 list = new MainWordList();
                 PopUpMessageService.GeneratePopUpMessage("New dictionary has been created");
             }
             return list;
+        }
+
+        public static void SaveMainWordList(MainWordList list)
+        {
+            FileHandlerService.SaveMainWordList(list);
         }
     }
 }

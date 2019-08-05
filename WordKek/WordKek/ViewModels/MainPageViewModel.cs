@@ -7,8 +7,6 @@ namespace WordKek.ViewModels
 {
     class MainPageViewModel: BaseViewModel
     {
-        private MainWordList mainWordList;
-
         public MainPageViewModel()
         {
             mainWordList = FileHandler.OpenMainWordList();

@@ -24,7 +24,7 @@ namespace WordKek.Droid
             return File.Exists(file);
         }
 
-        public bool CreateDictionary(MainWordList dictionary)
+        public bool SaveMainWordList(MainWordList dictionary)
         {
             string dictionaryFile = Path.Combine(DefaultFolder, "dictionary.dat");
 
@@ -36,7 +36,7 @@ namespace WordKek.Droid
             return true;
         }
 
-        public MainWordList ReadDictionary()
+        public MainWordList OpenMainWordList()
         {
             string dictionaryFile = Path.Combine(DefaultFolder, "dictionary.dat");
 

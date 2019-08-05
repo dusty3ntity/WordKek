@@ -5,7 +5,7 @@ namespace WordKek
     public interface IFileHandlerService
     {
         bool FileExists(string filePath);
-        bool CreateDictionary(MainWordList dictionary);
-        MainWordList ReadDictionary();
+        bool SaveMainWordList(MainWordList dictionary);
+        MainWordList OpenMainWordList();
     }
 }

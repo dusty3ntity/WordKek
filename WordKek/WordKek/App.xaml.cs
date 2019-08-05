@@ -1,4 +1,6 @@
 ﻿using System;
+using WordKek.Utils;
+using WordKek.ViewModels;
 using WordKek.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -38,6 +40,7 @@ namespace WordKek
         protected override void OnSleep()
         {
             // Handle when your app sleeps
+            FileHandler.SaveMainWordList(MainPageViewModel.mainWordList);
         }
 
         protected override void OnResume()

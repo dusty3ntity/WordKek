@@ -10,14 +10,14 @@ namespace WordKek.Services
             return DependencyService.Get<IFileHandlerService>().FileExists(filePath);
         }
 
-        public static bool CreateDictionary(MainWordList dictionary)
+        public static bool SaveMainWordList(MainWordList dictionary)
         {
-            return DependencyService.Get<IFileHandlerService>().CreateDictionary(dictionary);
+            return DependencyService.Get<IFileHandlerService>().SaveMainWordList(dictionary);
         }
 
-        public static MainWordList ReadDictionary()
+        public static MainWordList OpenMainWordList()
         {
-            return DependencyService.Get<IFileHandlerService>().ReadDictionary();
+            return DependencyService.Get<IFileHandlerService>().OpenMainWordList();
         }
     }
 }
