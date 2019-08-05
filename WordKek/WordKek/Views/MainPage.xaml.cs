@@ -19,5 +19,15 @@ namespace WordKek.Views
             AddNewWord.Source = ImageSource.FromFile("ImagePlusButton.png");
             BindingContext = new MainPageViewModel();
         }
+
+        private void AddNewWord_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddNewWord());
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new LearningPage());
+        }
     }
 }

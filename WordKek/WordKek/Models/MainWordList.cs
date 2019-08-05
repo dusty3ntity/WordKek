@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace WordKek.Models
+namespace WordKek.Models 
 {
     [Serializable]
     public class MainWordList : IEnumerable
