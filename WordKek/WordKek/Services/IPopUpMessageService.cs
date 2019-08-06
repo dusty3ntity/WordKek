@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WordKek
+﻿namespace WordKek
 {
     public interface IPopUpMessageService
     {

@@ -2,44 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordKek.Views.MainPage"
-             Title="Page" BackgroundColor="#303030">
+             Title="MainPage" BackgroundColor="#303030">
+    
     <Grid BackgroundColor="#282828">
-        <Grid.RowDefinitions >
+        <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="1.5*"/>
             <RowDefinition Height="2*"/>
-
-            
         </Grid.RowDefinitions>
-
         <Label Grid.Row="0" Text="Add new word!" TextColor="#f9f9f9" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <ImageButton Grid.Row="1" x:Name="AddNewWord" BorderColor="Transparent" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,0,0,15" Clicked="AddNewWord_Clicked"/>
+        <ImageButton Grid.Row="1" x:Name="AddNewWordButton" BorderColor="Transparent" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Padding="0,0,0,15" Clicked="OnAddNewWordClicked"/>
         <BoxView Grid.Row="2" BackgroundColor="#212121"/>
-        <Grid Grid.Row="2" Padding="10" >
-            <Grid.RowDefinitions >
+        <Grid Grid.Row="2" Padding="10">
+            <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
-
-
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Text="Words in dictionary: 127" TextColor="#f9f9f9" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-            <Grid Grid.Row="1" >
+            <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
                 <Label Grid.Column="0" Text="Words to practice: 15" TextColor="#B5B5B5" FontSize="Default" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
                 <Label Grid.Column="1" Text="New words for today: 56" TextColor="#B5B5B5" FontSize="Default" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-
             </Grid>
-
-            <Button Grid.Row="2" Text="Continue learning" VerticalOptions="CenterAndExpand" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" Clicked="Button_Clicked" />
+            <Button Grid.Row="2" Text="Continue learning" VerticalOptions="CenterAndExpand" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" Clicked="OnContinueLearningClicked"/>
         </Grid>
     </Grid>
-
-  
-
-
 </ContentPage>

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 using WordKek.Models;
 
 namespace WordKek.ViewModels
@@ -11,8 +10,9 @@ namespace WordKek.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         public static MainWordList mainWordList;
+        public static bool IsDictionaryChanged;
 
-        protected void NotifyPropertyChanged(string propertyName)
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

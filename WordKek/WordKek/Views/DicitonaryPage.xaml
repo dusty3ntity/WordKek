@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="WordKek.Views.DicitonaryListPage">
+             x:Class="WordKek.Views.DicitonaryPage">
+    
     <StackLayout  BackgroundColor="#282828">
         <Label Text="Dictionary" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="10" TextColor="#f9f9f9" HeightRequest="35"/>
         <Grid BackgroundColor="#303030">
@@ -19,9 +20,9 @@
             <Label Text="Translation" Grid.Column="1" FontSize="20" HorizontalTextAlignment="Center" TextColor="#BBBBBB" VerticalTextAlignment="Center"/>
         </Grid>
         <ListView x:Name="DictionaryList" Grid.Row="1" HasUnevenRows="True" SelectionMode="None" BackgroundColor="#212121" SeparatorColor="#323232" HorizontalScrollBarVisibility="Always">
-            <ListView.ItemTemplate >
-                <DataTemplate >
-                    <ViewCell >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>

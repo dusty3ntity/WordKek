@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WordKek.ViewModels;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
+
+using WordKek.ViewModels;
 
 namespace WordKek.Views
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
     [DesignTimeVisible(false)]
     public partial class MasterPage : ContentPage
     {

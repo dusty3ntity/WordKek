@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WordKek.Models
 {
@@ -40,7 +38,7 @@ namespace WordKek.Models
             }
 
             //Learned words
-            uint learnedWordsMaxNumber = numberOfWordsPerDay-failedWordsNumber-newWordsNumber;
+            uint learnedWordsMaxNumber = (uint) (numberOfWordsPerDay-failedWordsNumber-newWordsNumber);
             uint learnedWordsNumber = 0;
             foreach (Word w in mainList)
             {

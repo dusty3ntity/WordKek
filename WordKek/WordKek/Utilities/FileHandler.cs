@@ -1,7 +1,7 @@
 ﻿using WordKek.Models;
 using WordKek.Services;
 
-namespace WordKek.Utils
+namespace WordKek.Utilities
 {
     static class FileHandler
     {

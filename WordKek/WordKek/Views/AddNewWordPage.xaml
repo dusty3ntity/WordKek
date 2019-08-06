@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="WordKek.Views.AddNewWord">
+             x:Class="WordKek.Views.AddNewWordPage">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -16,6 +17,6 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Text="Add new word" FontSize="Title" HorizontalTextAlignment="Center"/>
-        <Entry Grid.Row="1" Text="Word" HorizontalTextAlignment="Start" />
+        <Entry Grid.Row="1" Text="Word" HorizontalTextAlignment="Start"/>
     </Grid>
 </ContentPage>

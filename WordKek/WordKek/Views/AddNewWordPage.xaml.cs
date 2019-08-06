@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace WordKek.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LearningPage : ContentPage
+    public partial class AddNewWordPage : ContentPage
     {
-        public LearningPage()
+        public AddNewWordPage()
         {
             InitializeComponent();
         }

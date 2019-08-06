@@ -1,9 +1,8 @@
-﻿using System;
-using WordKek.Utils;
+﻿using Xamarin.Forms;
+
+using WordKek.Utilities;
 using WordKek.ViewModels;
 using WordKek.Views;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WordKek
 {
@@ -14,38 +13,34 @@ namespace WordKek
             InitializeComponent();
             var tabbed = new CarouselPage();
             tabbed.Children.Add(new MainPage());
-            tabbed.Children.Add(new DicitonaryListPage());
+            tabbed.Children.Add(new DicitonaryPage());
             tabbed.Title = "WordKek";
             
-            
-            var masterdetailpage = new MasterDetailPage
+            var masterDetailPage = new MasterDetailPage
             {
-
                 Master= new MasterPage(),
                 Detail = new NavigationPage(tabbed)
                 {
                     BarBackgroundColor = Color.FromHex("#303030"),
                     BarTextColor = Color.FromHex("#B5B5B5"),
                 }
-
             };
-            MainPage =  masterdetailpage;
+            MainPage =  masterDetailPage;
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
             FileHandler.SaveMainWordList(MainPageViewModel.mainWordList);
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+
         }
     }
 }

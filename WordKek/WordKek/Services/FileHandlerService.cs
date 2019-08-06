@@ -1,5 +1,6 @@
-﻿using WordKek.Models;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+
+using WordKek.Models;
 
 namespace WordKek.Services
 {
