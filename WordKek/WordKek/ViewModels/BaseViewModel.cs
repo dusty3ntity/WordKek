@@ -9,12 +9,14 @@ namespace WordKek.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public static MainWordList mainWordList;
+        public static MainWordList mainWordList { get; set; }
         public static bool IsDictionaryChanged;
+
 
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

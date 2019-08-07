@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace WordKek.Models 
 {
@@ -39,6 +41,7 @@ namespace WordKek.Models
         {
             wordList.Remove(word);
         }
+
 
         public IEnumerator GetEnumerator()
         {
