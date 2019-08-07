@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="WordKek.Views.DicitonaryPage">
     
-    <StackLayout  BackgroundColor="#282828">
+    <StackLayout  BackgroundColor="#282828" >
         <Label Text="Dictionary" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="10" TextColor="#f9f9f9" HeightRequest="35"/>
         <Grid BackgroundColor="#303030">
             <Grid.ColumnDefinitions>
