@@ -19,14 +19,14 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Text="Words in dictionary: 127" TextColor="#f9f9f9" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="0" Text="{Binding WordsInDictionaryNumber, StringFormat='Words in dictionary: {0}'}" TextColor="#f9f9f9" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Words to practice: 15" TextColor="#B5B5B5" FontSize="Default" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-                <Label Grid.Column="1" Text="New words for today: 56" TextColor="#B5B5B5" FontSize="Default" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label Grid.Column="0" Text="{Binding WordsToPracticeNumber, StringFormat='Words to practice: {0}'}" TextColor="#B5B5B5" FontSize="Default" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label Grid.Column="1" Text="{Binding NewWordsNumber, StringFormat='New words for today: {0}'}" TextColor="#B5B5B5" FontSize="Default" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
             </Grid>
             <Button Grid.Row="2" Text="Continue learning" VerticalOptions="CenterAndExpand" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" Clicked="OnContinueLearningClicked"/>
         </Grid>

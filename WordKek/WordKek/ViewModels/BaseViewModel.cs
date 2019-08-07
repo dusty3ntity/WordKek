@@ -11,6 +11,7 @@ namespace WordKek.ViewModels
 
         public static MainWordList mainWordList;
         public static bool IsDictionaryChanged;
+        public static LearningWordList learningWordList;
 
         protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {

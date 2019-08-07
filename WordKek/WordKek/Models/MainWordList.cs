@@ -8,6 +8,7 @@ namespace WordKek.Models
     public class MainWordList : IEnumerable
     {
         private List<Word> wordList;
+        public uint NumberOfWords { get { return (uint)wordList.Count; } }
 
         public MainWordList()
         {
