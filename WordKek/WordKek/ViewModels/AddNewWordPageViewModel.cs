@@ -5,6 +5,8 @@ using System.Windows.Input;
 using WordKek.Models;
 using Xamarin.Forms;
 using WordKek.Views;
+using WordKek.Services;
+
 namespace WordKek.ViewModels 
 {
     class AddNewWordPageViewModel : BaseViewModel
@@ -29,7 +31,7 @@ namespace WordKek.ViewModels
                     {
                         DPage.UpdateDictionary();
                     }
-                    App.Current.MainPage.DisplayAlert("Notification", "Word Added", "Okay");
+                    PopUpMessageService.GeneratePopUpMessage($"Word ' {Word} - {Translate} ' added");
                     this.Word = string.Empty;
                     this.Translate = string.Empty;
                     NotifyPropertyChanged(nameof(Word));
@@ -38,7 +40,7 @@ namespace WordKek.ViewModels
                 else
                 {
 
-                    App.Current.MainPage.DisplayAlert("Notification", "Error", "Okay");
+                    PopUpMessageService.GeneratePopUpMessage("Error");
                 }
             });
         }
