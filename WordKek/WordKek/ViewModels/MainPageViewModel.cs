@@ -1,4 +1,7 @@
-﻿using WordKek.Models;
+﻿using System;
+
+using WordKek.Models;
+using WordKek.Services;
 using WordKek.Utilities;
 
 namespace WordKek.ViewModels
@@ -12,8 +15,7 @@ namespace WordKek.ViewModels
         public MainPageViewModel()
         {
             mainWordList = FileHandler.OpenMainWordList();
-            IsDictionaryChanged = false;
-            learningWordList = LearningWordListGenerator.GenerateList(mainWordList);
+			learningWordList = FileHandler.OpenLearningWordList(mainWordList);
         }
     }
 }

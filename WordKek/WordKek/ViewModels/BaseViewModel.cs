@@ -10,7 +10,6 @@ namespace WordKek.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         public static MainWordList mainWordList { get; set; }
-        public static bool IsDictionaryChanged;
         public static LearningWordList learningWordList;
 
 

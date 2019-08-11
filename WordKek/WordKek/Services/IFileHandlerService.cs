@@ -6,6 +6,8 @@ namespace WordKek
     {
         bool FileExists(string filePath);
         bool SaveMainWordList(MainWordList dictionary);
+		bool SaveLearningWordList(LearningWordList list);
         MainWordList OpenMainWordList();
+		LearningWordList OpenLearningWordList();
     }
 }

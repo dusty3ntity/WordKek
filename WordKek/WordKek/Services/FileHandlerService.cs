@@ -16,9 +16,19 @@ namespace WordKek.Services
             return DependencyService.Get<IFileHandlerService>().SaveMainWordList(dictionary);
         }
 
+		public static bool SaveLearningWordList(LearningWordList list)
+		{
+			return DependencyService.Get<IFileHandlerService>().SaveLearningWordList(list);
+		}
+
         public static MainWordList OpenMainWordList()
         {
             return DependencyService.Get<IFileHandlerService>().OpenMainWordList();
         }
+
+		public static LearningWordList OpenLearningWordList()
+		{
+			return DependencyService.Get<IFileHandlerService>().OpenLearningWordList();
+		}
     }
 }

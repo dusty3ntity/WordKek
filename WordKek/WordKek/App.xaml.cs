@@ -36,6 +36,7 @@ namespace WordKek
         protected override void OnSleep()
         {
             FileHandler.SaveMainWordList(MainPageViewModel.mainWordList);
+			FileHandler.SaveLearningWordList(MainPageViewModel.learningWordList);
         }
 
         protected override void OnResume()
