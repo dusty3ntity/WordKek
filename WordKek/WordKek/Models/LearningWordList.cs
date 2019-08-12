@@ -5,27 +5,34 @@ using System.Collections.Generic;
 namespace WordKek.Models
 {
 	[Serializable]
-    public class LearningWordList : IEnumerable
-    {
-        private List<Word> wordList;
+	public class LearningWordList
+	{
+		private ArrayList wordList;
 		public DateTime WasCreatedOn { get; }
-        public uint NewWordsNumber { get; set; }
-        public uint WordsToPracticeNumber { get; set; }
+		public uint NewWordsNumber { get; set; }
+		public uint WordsToPracticeNumber { get; set; }
 
-        public LearningWordList(DateTime wasCreatedOn)
-        {
-            wordList = new List<Word>();
+		public uint CurrentWordNumber { get; private set; }
+		public uint WordsNumber { get { return (uint)wordList.Count; } }
+
+		public LearningWordList(DateTime wasCreatedOn)
+		{
+			wordList = new ArrayList();
 			WasCreatedOn = wasCreatedOn;
-        }
+			CurrentWordNumber = 0;
+		}
 
-        public void Add(Word word)
-        {
-            wordList.Add(word);
-        }
+		public Word GetNextWord()
+		{
+			if(CurrentWordNumber < wordList.Count)
+				return (Word)wordList[(int)CurrentWordNumber++];
+			else
+				return null;
+		}
 
-        public IEnumerator GetEnumerator()
-        {
-            return (IEnumerator)this;
-        }
-    }
+		public void Add(Word word)
+		{
+			wordList.Add(word);
+		}
+	}
 }

@@ -9,13 +9,13 @@ namespace WordKek.Models
 
         public static LearningWordList GenerateList(MainWordList mainList)
         {
-            LearningWordList wordList = new LearningWordList(DateTime.Now.Date);
+			LearningWordList wordList = new LearningWordList(DateTime.Now.Date);
 
             //Failed Words
             uint failedWordsNumber = 0;
             foreach (Word w in mainList)
             {
-                if (w.CorrectRepeatsCount == 0)
+                if (w.GoesForNextDay)
                 {
                     wordList.Add(w);
                     failedWordsNumber++;

@@ -43,7 +43,7 @@ namespace WordKek.Droid
 			BinaryFormatter formatter = new BinaryFormatter();
 			using(FileStream fs = new FileStream(learningListFile, FileMode.Create))
 			{
-				formatter.Serialize(fs, learningListFile);
+				formatter.Serialize(fs, list);
 			}
 			return true;
 		}
