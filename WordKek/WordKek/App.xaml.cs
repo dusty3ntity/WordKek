@@ -3,6 +3,8 @@
 using WordKek.Utilities;
 using WordKek.ViewModels;
 using WordKek.Views;
+using WordKek.Models;
+using System;
 
 namespace WordKek
 {
@@ -41,7 +43,7 @@ namespace WordKek
 
         protected override void OnResume()
         {
-
+			MainPageViewModel.learningWordList = FileHandler.OpenLearningWordList(MainPageViewModel.mainWordList);
         }
     }
 }
