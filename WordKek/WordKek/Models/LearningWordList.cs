@@ -33,10 +33,11 @@ namespace WordKek.Models
 				return null;
 		}
 
-		public bool CheckCurrentWord(string originalWord)
+		public string CheckCurrentWord(string originalWord)
 		{
-			Word w = (Word)wordList[(int)CurrentWordNumber++];
-			return w.OriginalWord.Equals(originalWord);
+			Word w = (Word)wordList[(int)CurrentWordNumber];
+            CurrentWordNumber++;
+			return w.OriginalWord;
 		}
 
 		public void Add(Word word)
