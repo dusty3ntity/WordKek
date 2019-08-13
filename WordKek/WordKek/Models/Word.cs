@@ -43,20 +43,6 @@ namespace WordKek.Models
 			GoesForNextDay = true;
         }
 
-		public bool IsTranslationCorrect(string translation)
-		{
-			if(translation != null && translation.Equals(Translation))
-			{
-				IncreaseCorrectRepeatsCount(5);
-				return true;
-			}
-			else
-			{
-				ResetCorrectRepeatsCount();
-				return false;
-			}
-		}
-
         public override bool Equals(object ob)
         {
             Word w = ob as Word;

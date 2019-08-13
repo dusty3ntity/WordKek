@@ -22,12 +22,21 @@ namespace WordKek.Models
 			CurrentWordNumber = 0;
 		}
 
-		public Word GetNextWord()
+		public string GetNextWord()
 		{
 			if(CurrentWordNumber < wordList.Count)
-				return (Word)wordList[(int)CurrentWordNumber++];
+			{
+				Word w = (Word)wordList[(int)CurrentWordNumber];
+				return w.Translation;
+			}
 			else
 				return null;
+		}
+
+		public bool CheckCurrentWord(string originalWord)
+		{
+			Word w = (Word)wordList[(int)CurrentWordNumber++];
+			return w.OriginalWord.Equals(originalWord);
 		}
 
 		public void Add(Word word)
