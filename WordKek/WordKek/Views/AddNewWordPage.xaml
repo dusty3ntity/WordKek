@@ -11,9 +11,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label  Text="Add new word" TextColor="#f5f5f5" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+        <Label  Text="Add new word" TextColor="#a0a0a0" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center"/>
         <ScrollView Grid.Row="1" BackgroundColor="#212121">
-            <Grid>
+            <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
@@ -27,9 +27,9 @@
                     <ColumnDefinition Width="10*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Word" Grid.Row="0" Grid.Column="1" TextColor="#f0f0f0" FontSize="Subtitle"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label Text="Word" Grid.Row="0" Grid.Column="1" TextColor="#a0a0a0" FontSize="Subtitle"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                 <Entry Grid.Row="1" Text="{Binding Word, Mode=TwoWay}" Grid.Column="1" TextColor="#b5b5b5" PlaceholderColor="#a0a0a0" HorizontalTextAlignment="Center" VerticalOptions="Center" Keyboard="Text" ReturnType="Done" IsTextPredictionEnabled="True" WidthRequest="200"/>
-                <Label Text="Translation" Grid.Row="2" Grid.Column="1" TextColor="#f0f0f0" FontSize="Subtitle"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                <Label Text="Translation" Grid.Row="2" Grid.Column="1" TextColor="#a0a0a0" FontSize="Subtitle"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                 <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Translate, Mode=TwoWay}" TextColor="#b5b5b5" PlaceholderColor="#a0a0a0" HorizontalTextAlignment="Center" VerticalOptions="Center" Keyboard="Text" ReturnType="Done" IsTextPredictionEnabled="True" WidthRequest="200"/>
                 <Button Grid.Row="5" Grid.Column="1"  Text="Add" VerticalOptions="Center" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" Command="{Binding AddNewWord}"/>
             </Grid>
