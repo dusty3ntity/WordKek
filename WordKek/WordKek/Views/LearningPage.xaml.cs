@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using WordKek.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace WordKek.Views
@@ -9,6 +10,7 @@ namespace WordKek.Views
         public LearningPage()
         {
             InitializeComponent();
+            BindingContext = new LearningPageViewModel();
         }
     }
 }

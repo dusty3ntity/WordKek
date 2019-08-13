@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:staticns="clr-namespace:WordKek.ViewModels"
              mc:Ignorable="d"
              x:Class="WordKek.Views.LearningPage"
              Title="WordKek">
@@ -30,17 +31,17 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="Original word" Grid.Row="0" Grid.Column="1" TextColor="#a0a0a0" FontSize="Subtitle"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" IsEnabled="False"/>
                 <BoxView BackgroundColor="#568CC0" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" CornerRadius="15" />
-                <Label Text="Hello" FontSize="Large" Grid.Row="1" Grid.Column="1" TextColor="#d5d5d5" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                <Label Text="{Binding Source={x:Static staticns:LearningPageViewModel.OriginalWord}}" FontSize="Large" Grid.Row="1" Grid.Column="1" TextColor="#d5d5d5" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
                 <Label Text="Translation" Grid.Row="2" Grid.Column="1" TextColor="#a0a0a0" FontSize="Subtitle"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Translate, Mode=TwoWay}" TextColor="#d2d2d2" PlaceholderColor="#a0a0a0" HorizontalTextAlignment="Center" VerticalOptions="Center" Keyboard="Text" ReturnType="Done" IsTextPredictionEnabled="True" WidthRequest="200"/>
+                <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Source={x:Static staticns:LearningPageViewModel.Translation}}" TextColor="#d2d2d2" PlaceholderColor="#a0a0a0" HorizontalTextAlignment="Center" VerticalOptions="Center" Keyboard="Text" ReturnType="Done" IsTextPredictionEnabled="True" WidthRequest="200"/>
 
                 <Grid Grid.Row="5" Grid.Column="1">
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" TextColor="#8DC641" VerticalOptions="Center"/>
-                    <Button  Grid.Column="1"  Text="Submit" VerticalOptions="Center" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" Command="{Binding AddNewWord}"/>
+                    <Label Grid.Column="0" TextColor="#8DC641" VerticalOptions="Center" Text="{Binding LearninigWordsInfo}"/>
+                    <Button  Grid.Column="1"  Text="Submit" VerticalOptions="Center" CornerRadius="15" BackgroundColor="#8DC641" TextColor="#e0ffbc" Command="{Binding OnSubmitButtonClick}"/>
                 </Grid>
                 
             </Grid>
