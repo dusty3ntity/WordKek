@@ -23,6 +23,7 @@ namespace WordKek.Views
 
         private void OnContinueLearningClicked(object sender, EventArgs e)
         {
+            if (BaseViewModel.learningWordList.GetNextWord() != null)
             Navigation.PushAsync(new LearningPage());
         }
     }

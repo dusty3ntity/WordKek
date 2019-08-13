@@ -12,11 +12,12 @@ namespace WordKek.ViewModels
         public string Translation { get; set; }
         public string OriginalWord { get; set; }
 
+        public static INavigation Navigation { get; set; }
         public string LearninigWordsInfo
         {
             get
             {
-                return string.Format("{0}/{1}",learningWordList.CurrentWordNumber,learningWordList.WordsNumber);
+                return string.Format("{0}/{1}",learningWordList.CurrentWordNumber+1,learningWordList.WordsNumber);
             }
         }
 
@@ -26,24 +27,32 @@ namespace WordKek.ViewModels
 			NotifyPropertyChanged(nameof(LearninigWordsInfo));
 
 			OriginalWord = learningWordList.GetNextWord();
-            if (OriginalWord == null) return;
-            OnSubmitButtonClick = new Command(() =>
+            if (OriginalWord == null) Navigation.PopAsync();
+            OnSubmitButtonClick = new Command(async() =>
             {
                 string rightTranslation = learningWordList.CheckCurrentWord(Translation).ToLower();
-                if (!rightTranslation.Equals(Translation.ToLower()))
+
+                if (Translation!=null && !rightTranslation.Equals(Translation.ToLower()))
                 {
-                    Application.Current.MainPage.DisplayAlert("Failed", "You entered incorrectly:" + OriginalWord + " - " + rightTranslation, "OK");
+                    await Application.Current.MainPage.DisplayAlert("Failed", "\n" + OriginalWord + " - " + rightTranslation, "OK");
                 }
                 else
                 {
-                    Application.Current.MainPage.DisplayAlert("Correct", "You entered correctly:" + OriginalWord + " - " + rightTranslation, "OK");
+                    await Application.Current.MainPage.DisplayAlert("Correct", "\n" + OriginalWord + " - " + rightTranslation, "OK");
                 }
-                OriginalWord = learningWordList.GetNextWord();
-                Translation = string.Empty;
-                NotifyPropertyChanged(nameof(OriginalWord));
-                NotifyPropertyChanged(nameof(Translation));
-				NotifyPropertyChanged(nameof(LearninigWordsInfo));
+                UpdateOrLeavePage();
 			});
         }
+
+        void UpdateOrLeavePage()
+        {
+            OriginalWord = learningWordList.GetNextWord();
+            if (OriginalWord == null) Navigation.PopAsync();
+            Translation = string.Empty;
+            NotifyPropertyChanged(nameof(OriginalWord));
+            NotifyPropertyChanged(nameof(Translation));
+            NotifyPropertyChanged(nameof(LearninigWordsInfo));
+        }
     }
+
 }

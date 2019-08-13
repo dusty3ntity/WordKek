@@ -11,6 +11,7 @@ namespace WordKek.Views
         {
             InitializeComponent();
             BindingContext = new LearningPageViewModel();
+            LearningPageViewModel.Navigation = Navigation;
         }
     }
 }
