@@ -24,7 +24,7 @@ namespace WordKek.Utilities
 			if(!FileHandlerService.FileExists("learning_list.dat"))
 				return LearningWordListGenerator.GenerateList(dictionary);
 			LearningWordList openedList = FileHandlerService.OpenLearningWordList();
-			if(openedList.WasCreatedOn.Ticks < DateTime.Now.Date.Ticks)
+			if(openedList.WasCreatedOn < DateTime.Now.Date)
 				return LearningWordListGenerator.GenerateList(dictionary);
 			else
 				return openedList;

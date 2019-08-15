@@ -12,11 +12,9 @@ namespace WordKek.ViewModels
 		public static MainWordList mainWordList { get; set; }
 		public static LearningWordList learningWordList { get; set; }
 
-
 		protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
-
 	}
 }

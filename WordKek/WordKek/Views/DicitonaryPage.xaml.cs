@@ -8,28 +8,21 @@ namespace WordKek.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DicitonaryPage : ContentPage
     {
-        static object locker = new object();
         public DicitonaryPage()
         {
             InitializeComponent();
-            DictionaryList.ItemsSource = BaseViewModel.mainWordList;
+            DictionaryList.ItemsSource = MainPageViewModel.mainWordList;
             BindingContext = new AddNewWordPageViewModel();
             AddNewWordPageViewModel.DPage = this;
         }
         public void UpdateDictionary()
         {
             DictionaryList.ItemsSource = null;
-            DictionaryList.ItemsSource = BaseViewModel.mainWordList;
+            DictionaryList.ItemsSource = MainPageViewModel.mainWordList;
         }
         protected override void OnAppearing()
         {
-           // DictionaryList.ItemsSource = null;
-           // DictionaryList.ItemsSource = BaseViewModel.mainWordList;
             base.OnAppearing();
-           /* lock(locker) {
-
-            }*/
-
         }
     }
 }

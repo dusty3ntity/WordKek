@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace WordKek.Models
 {
@@ -22,22 +21,26 @@ namespace WordKek.Models
 			CurrentWordNumber = 0;
 		}
 
-		public string GetNextWord()
+		public Word GetNextWord()
 		{
 			if(CurrentWordNumber < wordList.Count)
-			{
-				Word w = (Word)wordList[(int)CurrentWordNumber];
-				return w.Translation;
-			}
+				return (Word)wordList[(int)CurrentWordNumber];
 			else
 				return null;
 		}
 
-		public string CheckCurrentWord(string originalWord)
+		public bool CheckCurrentWord(string originalWord)
 		{
-			Word w = (Word)wordList[(int)CurrentWordNumber];
-            CurrentWordNumber++;
-			return w.OriginalWord;
+			Word w = (Word)wordList[(int)CurrentWordNumber++];
+			if(originalWord == null)
+				return false;
+			if(w.OriginalWord.ToLower().Equals(originalWord.ToLower()))
+			{
+				w.IncreaseCorrectRepeatsCount();
+				return true;
+			}
+			w.ResetCorrectRepeatsCount();
+			return false;
 		}
 
 		public void Add(Word word)

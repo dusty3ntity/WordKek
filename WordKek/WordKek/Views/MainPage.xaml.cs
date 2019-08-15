@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
+
 using Xamarin.Forms;
 
 using WordKek.ViewModels;
+using WordKek.Services;
 
 namespace WordKek.Views
 {
@@ -23,8 +25,10 @@ namespace WordKek.Views
 
         private void OnContinueLearningClicked(object sender, EventArgs e)
         {
-            if (BaseViewModel.learningWordList.GetNextWord() != null)
-            Navigation.PushAsync(new LearningPage());
+			if(MainPageViewModel.learningWordList.GetNextWord() != null)
+				Navigation.PushAsync(new LearningPage());
+			else
+				PopUpMessageService.GeneratePopUpMessage("You've done your best today! Come tomorrow!");
         }
     }
 }

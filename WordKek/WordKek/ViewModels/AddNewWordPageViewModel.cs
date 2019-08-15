@@ -1,48 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using Xamarin.Forms;
+
 using WordKek.Models;
-using Xamarin.Forms;
 using WordKek.Views;
 using WordKek.Services;
 
-namespace WordKek.ViewModels 
+namespace WordKek.ViewModels
 {
-    class AddNewWordPageViewModel : BaseViewModel
-    {
-        public string Word{get;set; }
-        public string Translate { get; set; }
-        
-        public Command AddNewWord { get; set; }
+	class AddNewWordPageViewModel : BaseViewModel
+	{
+		public string Word { get; set; }
+		public string Translate { get; set; }
 
-        public static DicitonaryPage DPage { get; set; }
+		public Command AddNewWord { get; set; }
 
-        public AddNewWordPageViewModel()
-        {
-            AddNewWord = new Command(() =>
-            {
-                if ((Word != null && Translate != null)&&
-                    (Word != "" && Translate != "") 
-                )
-                {
-                    mainWordList.Add(new Word(this.Word, Translate));
-                    if(DPage!=null)
-                    {
-                        DPage.UpdateDictionary();
-                    }
-                    PopUpMessageService.GeneratePopUpMessage($"Word ' {Word} - {Translate} ' added");
-                    this.Word = string.Empty;
-                    this.Translate = string.Empty;
-                    NotifyPropertyChanged(nameof(Word));
-                    NotifyPropertyChanged(nameof(Translate));
-                }
-                else
-                {
+		public static DicitonaryPage DPage { get; set; }
 
-                    PopUpMessageService.GeneratePopUpMessage("Error");
-                }
-            });
-        }
-    }
+		public AddNewWordPageViewModel()
+		{
+			AddNewWord = new Command(() =>
+			{
+				if(!string.IsNullOrEmpty(Word) && !string.IsNullOrEmpty(Translate))
+				{
+					mainWordList.Add(new Word(Word, Translate));
+					if(DPage != null)
+						DPage.UpdateDictionary();
+					PopUpMessageService.GeneratePopUpMessage($"Word ' {Word} - {Translate} ' added");
+					this.Word = string.Empty;
+					this.Translate = string.Empty;
+					NotifyPropertyChanged(nameof(Word));
+					NotifyPropertyChanged(nameof(Translate));
+				}
+				else
+					PopUpMessageService.GeneratePopUpMessage("Error");
+			});
+		}
+	}
 }

@@ -41,7 +41,6 @@ namespace WordKek.Models
 			wordList.Remove(word);
 		}
 
-
 		public IEnumerator GetEnumerator()
 		{
 			return wordList.GetEnumerator();

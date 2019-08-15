@@ -5,6 +5,8 @@ namespace WordKek.Models
     [Serializable]
     public class Word
     {
+		private const uint maxRepeats = 5;
+
         public string OriginalWord { get; private set; }
         public string Translation { get; private set; }
         public bool IsLearned { get; private set; }
@@ -27,7 +29,7 @@ namespace WordKek.Models
 			GoesForNextDay = false;
         }
 
-        private void IncreaseCorrectRepeatsCount(ushort maxRepeats)
+        public void IncreaseCorrectRepeatsCount()
         {
             TotalRepeatsCount++;
             CorrectRepeatsCount++;
@@ -36,7 +38,7 @@ namespace WordKek.Models
 			GoesForNextDay = false;
         }
 
-        private void ResetCorrectRepeatsCount()
+        public void ResetCorrectRepeatsCount()
         {
             TotalRepeatsCount++;
             CorrectRepeatsCount = 0;

@@ -1,58 +1,63 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
+﻿using Xamarin.Forms;
+
 using WordKek.Models;
-using Xamarin.Forms;
+using WordKek.Services;
+
+using System.Diagnostics;
 
 namespace WordKek.ViewModels
 {
-    class LearningPageViewModel :BaseViewModel 
-    {
-        public string Translation { get; set; }
-        public string OriginalWord { get; set; }
+	class LearningPageViewModel : BaseViewModel
+	{
+		private Word currentWord;
+		public string Translation { get; set; }
+		public string OriginalWord { get; set; }
 
-        public static INavigation Navigation { get; set; }
-        public string LearninigWordsInfo
-        {
-            get
-            {
-                return string.Format("{0}/{1}",learningWordList.CurrentWordNumber+1,learningWordList.WordsNumber);
-            }
-        }
+		public static INavigation Navigation { get; set; }
+		public Command OnSubmitButtonClick { get; set; }
+		public string LearniningWordsInfo
+		{
+			get
+			{
+				return string.Format("{0}/{1}   CR: {2}", learningWordList.CurrentWordNumber + 1, learningWordList.WordsNumber, currentWord.CorrectRepeatsCount);
+			}
+		}
 
-        public Command OnSubmitButtonClick { get; set; }
-        public LearningPageViewModel()
-        {
-			NotifyPropertyChanged(nameof(LearninigWordsInfo));
+		public LearningPageViewModel()
+		{
+			currentWord = learningWordList.GetNextWord();
+			if(currentWord == null)
+				Navigation.PopAsync();
+			OriginalWord = currentWord.Translation;
 
-			OriginalWord = learningWordList.GetNextWord();
-            if (OriginalWord == null) Navigation.PopAsync();
-            OnSubmitButtonClick = new Command(async() =>
-            {
-                string rightTranslation = learningWordList.CheckCurrentWord(Translation).ToLower();
+			OnSubmitButtonClick = new Command(async () =>
+			{
+				if(learningWordList.CheckCurrentWord(Translation))
+					await Application.Current.MainPage.DisplayAlert("Correct!", "\n" + currentWord.OriginalWord + " - " + OriginalWord, "OK");
+				else
+					await Application.Current.MainPage.DisplayAlert("Wrong!", "\n" + currentWord.OriginalWord + " - " + OriginalWord, "OK");
 
-                if (Translation!=null && !rightTranslation.Equals(Translation.ToLower()))
-                {
-                    await Application.Current.MainPage.DisplayAlert("Failed", "\n" + OriginalWord + " - " + rightTranslation, "OK");
-                }
-                else
-                {
-                    await Application.Current.MainPage.DisplayAlert("Correct", "\n" + OriginalWord + " - " + rightTranslation, "OK");
-                }
-                UpdateOrLeavePage();
+				UpdateOrLeavePage();
 			});
-        }
+		}
 
-        void UpdateOrLeavePage()
-        {
-            OriginalWord = learningWordList.GetNextWord();
-            if (OriginalWord == null) Navigation.PopAsync();
-            Translation = string.Empty;
-            NotifyPropertyChanged(nameof(OriginalWord));
-            NotifyPropertyChanged(nameof(Translation));
-            NotifyPropertyChanged(nameof(LearninigWordsInfo));
-        }
-    }
+		void UpdateOrLeavePage()
+		{
+			currentWord = learningWordList.GetNextWord();
+			if(currentWord == null)
+			{
+				Navigation.PopAsync();
+				PopUpMessageService.GeneratePopUpMessage("Great! There are no words left for today!");
+			}
+			else
+			{
+				OriginalWord = currentWord.Translation;
+				Translation = string.Empty;
+				NotifyPropertyChanged(nameof(OriginalWord));
+				NotifyPropertyChanged(nameof(Translation));
+				NotifyPropertyChanged(nameof(LearniningWordsInfo));
+			}
+		}
+	}
 
 }

@@ -1,8 +1,4 @@
-﻿using System;
-
-using WordKek.Models;
-using WordKek.Services;
-using WordKek.Utilities;
+﻿using WordKek.Utilities;
 
 namespace WordKek.ViewModels
 {

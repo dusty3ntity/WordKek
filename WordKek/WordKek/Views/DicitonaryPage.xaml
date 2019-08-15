@@ -10,14 +10,16 @@
         <Label Text="Dictionary" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Margin="10" TextColor="#f9f9f9" HeightRequest="35"/>
         <Grid BackgroundColor="#303030">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <Label Text="Word" FontSize="20" HorizontalTextAlignment="Center" TextColor="#BBBBBB" VerticalTextAlignment="Center" />
             <Label Text="Translation" Grid.Column="1" FontSize="20" HorizontalTextAlignment="Center" TextColor="#BBBBBB" VerticalTextAlignment="Center"/>
+			<Label Text="CR" Grid.Column="2" FontSize="20" HorizontalTextAlignment="Center" TextColor="#BBBBBB" VerticalTextAlignment="Center"/>
         </Grid>
         <ListView x:Name="DictionaryList" Grid.Row="1" HasUnevenRows="True" SelectionMode="None" BackgroundColor="#212121" SeparatorColor="#323232" HorizontalScrollBarVisibility="Always">
             <ListView.ItemTemplate>
@@ -25,11 +27,13 @@
                     <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+								<ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Label Text="{Binding OriginalWord}" Grid.Column="0" FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#B5B5B5" Margin="5"/>
                             <Label Text="{Binding Translation}" Grid.Column="1" FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#B5B5B5" Margin="5"/>
+							<Label Text="{Binding CorrectRepeatsCount}" Grid.Column="2" FontSize="Medium" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#B5B5B5" Margin="5"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
