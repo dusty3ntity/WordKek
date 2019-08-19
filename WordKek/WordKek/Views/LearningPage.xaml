@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Label  Text="Learning" TextColor="#a0a0a0" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center"/>
         <ScrollView Grid.Row="1" BackgroundColor="#212121">
-            <Grid >
+            <Grid CompressedLayout.IsHeadless="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
@@ -34,7 +34,7 @@
                 <Label Text="Translation" Grid.Row="2" Grid.Column="1" TextColor="#a0a0a0" FontSize="Subtitle"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                 <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Translation}" TextColor="#d2d2d2" PlaceholderColor="#a0a0a0" HorizontalTextAlignment="Center" VerticalOptions="Center" Keyboard="Text" ReturnType="Done" IsTextPredictionEnabled="True" WidthRequest="200"/>
 
-                <Grid Grid.Row="5" Grid.Column="1">
+                <Grid Grid.Row="5" Grid.Column="1" CompressedLayout.IsHeadless="True">
                     <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="2*"/>

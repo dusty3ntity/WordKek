@@ -5,10 +5,12 @@ using Xamarin.Forms;
 
 using WordKek.ViewModels;
 using WordKek.Services;
+using Xamarin.Forms.Xaml;
 
 namespace WordKek.Views
 {
-    [DesignTimeVisible(false)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class MainPage : ContentPage
     {
         public MainPage()

@@ -4,7 +4,7 @@
              x:Class="WordKek.Views.MainPage"
              Title="MainPage" BackgroundColor="#303030">
     
-    <Grid BackgroundColor="#282828">
+    <Grid BackgroundColor="#282828" CompressedLayout.IsHeadless="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="1.6*"/>
             <RowDefinition Height="2*"/>
@@ -30,14 +30,14 @@
             </VisualStateManager.VisualStateGroups>
         </ImageButton>
         <BoxView Grid.Row="1" BackgroundColor="#212121"/>
-        <Grid Grid.Row="1" Padding="10">
+        <Grid Grid.Row="1" Padding="10" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Text="{Binding WordsInDictionaryNumber, StringFormat='Words in dictionary: {0}'}" TextColor="#f9f9f9" FontSize="Subtitle" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" CompressedLayout.IsHeadless="True">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>

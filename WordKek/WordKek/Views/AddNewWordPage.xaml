@@ -6,14 +6,14 @@
              mc:Ignorable="d"
              x:Class="WordKek.Views.AddNewWordPage"
              Title="WordKek">
-    <Grid BackgroundColor="#282828">
+    <Grid BackgroundColor="#282828" >
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label  Text="Add new word" TextColor="#a0a0a0" FontSize="Title" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center"/>
-        <ScrollView Grid.Row="1" BackgroundColor="#212121">
-            <Grid >
+        <ScrollView Grid.Row="1" BackgroundColor="#212121" >
+            <Grid  CompressedLayout.IsHeadless="True">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WordKek.Views.MasterPage"
              Title="Maser">
-    
-    <Grid BackgroundColor="#303030">
+
+    <Grid BackgroundColor="#303030" CompressedLayout.IsHeadless="True">
         <Button Text="About" TextColor="#f9f9f9" FontSize="Subtitle" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center"/>
     </Grid>
 </ContentPage>

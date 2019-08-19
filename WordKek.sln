@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordKek.Android", "WordKek\WordKek.Android\WordKek.Android.csproj", "{63FA559C-B5F9-438C-A92F-B8E7D643DB1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordKek", "WordKek\WordKek\WordKek.csproj", "{A8D1974E-ACD1-4527-8FAF-0045D83F52F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordKek", "WordKek\WordKek\WordKek.csproj", "{A8D1974E-ACD1-4527-8FAF-0045D83F52F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
